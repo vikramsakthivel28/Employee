@@ -24,12 +24,12 @@ public class EmployeeControler {
 	@Autowired
 	EmployeeService es;
 	
-	@PostMapping(value="/postSingleEmp")
+	@PostMapping(value="/postEmpSingle")
 	public String PostEmp(@RequestBody Employee e) {
 		return es.PostEmp(e);
 	}
 	
-	@PostMapping(value="/postMultipelEmp")
+	@PostMapping(value="/postEmpMultipel")
 	public String PostMultipelEmp(@RequestBody List<Employee> e) {
 		return es.PostMultipelEmp(e);
 	}
@@ -49,7 +49,7 @@ public class EmployeeControler {
 		return es.deleteById(n);
 	}
 	
-	@PutMapping(value="/update/{n}")
+	@PutMapping(value="/updateSingleEmp/{n}")
 	public String update(@PathVariable int n, @RequestBody Employee e) {
 		return es.update(n,e); 
 	}
